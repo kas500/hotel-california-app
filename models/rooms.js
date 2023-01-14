@@ -32,9 +32,7 @@ Rooms.init(
             defaultValue: true,
             allowNull:false,
         }
-
-
-        
+  
     },
     {
         sequelize,
