@@ -2,9 +2,9 @@ const { Model, DataTypes, DATEONLY } = require('sequelize');
 // const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Rooms extends Model {}
+class Comments extends Model { }
 
-Rooms.init(
+Comments.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,33 +12,32 @@ Rooms.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        price: {
-            type:DataTypes.DECIMAL(),
-            allowNull: false,
-            validate: {
-                isDecimal: true,
-            } 
-        },
-        numOfGuest: {
+        guest_id: {
             type: DataTypes.INTEGER,
-            defaultValue: "2",
-            
+            allowNull: false,
+            references: {
+                model: 'guest',
+                key: 'id'
+            }
+
         },
-        
-        available: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true,
+
+        comment: {
+            type: DataTypes.STRING(280),
             allowNull:false,
         }
-  
+
+      
+
+
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'rooms',
+        modelName: 'comments',
     }
 );
 
-module.exports = Rooms;
+module.exports = Comments;

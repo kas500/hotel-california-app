@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, DATEONLY } = require('sequelize');
 // const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -12,10 +12,36 @@ Reservations.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        gu: {
+        guest_id: {
             type: DataTypes.INTEGER,
+            allowNull:false,
+            references: {
+                model: 'guest',
+                key: 'id'
+            }
+
+        },
+
+        checkIn_date: {
+            type: DataTypes.DATEONLY,
+            allowNull:false,
+        },
+
+        checkOut_date: {
+            type: DataTypes.DATEONLY,
             allowNull: false,
         },
+        rooms_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'rooms',
+                key: 'id'
+            },
+
+        }
+
+
 
     },
     {
