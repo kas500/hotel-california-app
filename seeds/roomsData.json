@@ -1,15 +1,65 @@
 [
   {
-    "price": "100",
-    "numbOfGuest":"2",
+    "price": "$100",
+    "numOfGuest":"2",
     "available":false
    
   },
   {
-    "price": "100",
-    "numbOfGuest":"2",
+    "price": "$150",
+    "numOfGuest":"2",
+    "available":true
+   
+  },
+  {
+    "price": "$200",
+    "numOfGuest":"2",
     "available":false
    
   },
+   {
+    "price": "$100",
+    "numOfGuest":"2",
+    "available":true
+   
+  },
+  {
+    "price": "$300",
+    "numOfGuest":"4",
+    "available":true
+   
+  },
+   {
+    "price": "$500",
+    "numOfGuest":"4",
+    "available":true
+   
+  },
+   {
+    "price": "$200",
+    "numOfGuest":"2",
+    "available":true
+   
+  },
+   {
+    "price": "$180",
+    "numOfGuest":"3",
+    "available":true
+   
+  },
+   {
+    "price": "$600",
+    "numOfGuest":"6",
+    "available":true
+   
+  },
+    {
+    "price": "$170",
+    "numOfGuest":"2",
+    "available":true
+   
+  }
+
     
+
 ]

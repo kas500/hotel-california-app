@@ -13,15 +13,17 @@ Rooms.init(
             autoIncrement: true,
         },
         price: {
-            type:DataTypes.DECIMAL(),
+            type:DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isDecimal: true,
-            } 
+            
         },
         numOfGuest: {
             type: DataTypes.INTEGER,
-            defaultValue: "2",
+            allowNull: false,
+            dafaultValue: 2,
+            validate: {
+                isNumeric: true,
+            }
             
         },
         
