@@ -12,7 +12,7 @@ Reservations.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        price: {
+        gu: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },

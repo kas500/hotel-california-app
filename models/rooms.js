@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, DATEONLY } = require('sequelize');
 // const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -13,9 +13,27 @@ Rooms.init(
             autoIncrement: true,
         },
         price: {
-            type:DataTypes.INTEGER,
+            type:DataTypes.DECIMAL(),
             allowNull: false,
+            validate: {
+                isDecimal: true,
+            } 
         },
+        guest_number: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'guest',
+                key:'id'
+            }
+            
+        },
+        available: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+            allowNull:false,
+        }
+
+
         
     },
     {
