@@ -39,7 +39,13 @@ Reservations.init(
                 key: 'id'
             },
 
+        },
+        checked_In: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: false,
         }
+
 
 
 
