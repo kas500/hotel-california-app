@@ -1,0 +1,10 @@
+[
+  {
+    "guest_id": "1",
+    "checkIn_date": "2023-01-08",
+    "checkOut_date": "2023-01-10",
+    "rooms_id":"2",
+    "checked_In":false
+
+  }
+]
