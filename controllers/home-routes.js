@@ -2,19 +2,22 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     try {
-      const testData =  "Test home"
       res.render('homepage', {
-        testData
+        loggedIn: req.session.loggedIn
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/login', async (req, res) => {
+  router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
     try {
       res.render('login', {
-        urlLogin: req.url
+        urlLogin: req.url,
       });
     } catch (err) {
       res.status(500).json(err);
