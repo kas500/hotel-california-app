@@ -1,34 +1,69 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Guest } = require('../../models');
 
-router.post('/login', async (req, res) => {
+// CREATE new guest
+router.post('/', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username }});
-    console.log(userData);
-    if (!userData) {
-      res.status(400).json({ message: 'Incorrect username, please try again'});
-      return;
-    }
-
-    const validPassword = await userData.checkPassword(req.body.password);
-    console.log(validPassword);
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password, please try again'});
-      return;
-    }
+    const dbGuestData = await Guest.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.json({ user: userData, message: 'You are now logged in!'});
+      req.session.loggedIn = true;
+      req.session.username = req.body.username;
+      req.session.userId = dbGuestData.id;  
+      
+      res.status(200).json(dbGuestData);
     });
   } catch (err) {
-    res.status(400).json({ message: 'caught api/login', err });
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
+// Login
+router.post('/login', async (req, res) => {
+  try {
+    const dbGuestData = await Guest.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+
+    if (!dbGuestData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect user or password. Please try again!' });
+      return;
+    }
+
+    const validPassword = await dbGuestData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect user or password. Please try again!' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.username = req.body.username;
+      req.session.userId = dbGuestData.id; 
+
+      res
+        .status(200)
+        .json({ user: dbGuestData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Logout
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
