@@ -5,9 +5,9 @@ const Comments = require('./comments');
 
 
 
-Rooms.hasOne(Reservations, {
+Rooms.hasMany(Reservations, {
     foreignKey: 'rooms_id',
-    onDelete: 'CASCADE'
+   
 
 });
 
@@ -17,9 +17,9 @@ Reservations.belongsTo(Rooms, {
 
 
 
-Guest.hasOne(Reservations, {
+Guest.hasMany(Reservations, {
     foreignKey: 'guest_id',
-    onDelete: 'CASCADE'
+    
     
 });
 
@@ -28,9 +28,9 @@ Reservations.belongsTo(Guest, {
 
 });
 
-Guest.hasOne(Comments, {
+Guest.hasMany(Comments, {
     foreignKey: 'guest_id',
-    onDelete: 'CASCADE'
+   
 
 });
 
