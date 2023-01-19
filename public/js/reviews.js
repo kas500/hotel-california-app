@@ -1,7 +1,6 @@
 const reviewsFormHandler = async (event) => {
     event.preventDefault();
 
-   console.log(" **********reviews.js")
     const reviews = document.querySelector('#reviews').value.trim();
    
 

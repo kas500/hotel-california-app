@@ -3,8 +3,6 @@ const { Comments } = require('../../models');
 
 router.post('/', async (req, res) => {
 
-    console.log("reviwesRoutes.js");
-    console.log(req.session);
 
     if (req.session.loggedIn) {
         try {
