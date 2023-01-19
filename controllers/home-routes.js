@@ -1,3 +1,5 @@
+const withAuth = require('../utils/auth');
+
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
@@ -11,10 +13,6 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
     try {
       res.render('login', {
         urlLogin: req.url,
@@ -24,50 +22,55 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/reservation', async (req, res) => {
+  router.get('/reservation', withAuth, async (req, res) => {
     try {
       res.render('reservation', {
-        urlReservation: req.url
+        urlReservation: req.url,
+        loggedIn: req.session.loggedIn
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/checkin', async (req, res) => {
+  router.get('/checkin', withAuth, async (req, res) => {
     try {
       res.render('checkin', {
-        urlCheckin: req.url
+        urlCheckin: req.url,
+        loggedIn: req.session.loggedIn,
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/checkout', async (req, res) => {
+  router.get('/checkout', withAuth, async (req, res) => {
     try {
       res.render('checkout', {
-        urlCheckout: req.url
+        urlCheckout: req.url,
+        loggedIn: req.session.loggedIn
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/reviews', async (req, res) => {
+  router.get('/reviews', withAuth, async (req, res) => {
     try {
       res.render('reviews', {
-        urlReviews: req.url
+        urlReviews: req.url,
+        loggedIn: req.session.loggedIn
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/fun', async (req, res) => {
+  router.get('/fun', withAuth, async (req, res) => {
     try {
       res.render('fun', {
-        urlFun: req.url
+        urlFun: req.url,
+        loggedIn: req.session.loggedIn
       });
     } catch (err) {
       res.status(500).json(err);
