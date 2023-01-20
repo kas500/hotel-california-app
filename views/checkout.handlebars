@@ -1,5 +1,17 @@
-<form class="border text-center col-4 mt-5 mx-auto  shadow-lg rounded">
-  <h3 class="display-5 mt-3">Guest, thanks for choosing us!</h3>
-  <h5 class="display-5 mt-5">Check out please</h3>
-  <button type="submit" class="btn btn-primary mt-3 mb-3">Room number</button>
+<form class="border text-center col-2 mt-5 mx-auto  shadow-lg rounded" id="checkout-form">
+  <input type="hidden" name="reservation-id" value="{{reservations.id}}" />
+
+  <h3 class="display-5 mt-3">You Can Checkout Anytime You Like!</h3>
+  <h5 class="display-5 mt-5">Check Out Below</h3>
+
+    <div class="form-group">
+      <label for="room-number">Room Number:</label>
+      <input class="form-input" type="text" name="room-number" value="{{reservations.rooms_id}}" />
+    </div>
+
+  <button type="submit" class="btn btn-primary mt-3 mb-3">Check Out</button>
+
+  <h4 class="display-5 mt-3">But You Can Never Leave!</h4>
 </form>
+
+<script src="./js/checkout.js"></script>

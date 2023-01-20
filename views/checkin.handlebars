@@ -1,5 +1,15 @@
-<form class="border text-center col-2 mt-5 mx-auto  shadow-lg rounded">
-  <h3 class="display-5 mt-3">Hello guest!</h3>
-  <h5 class="display-5 mt-5">Check in please</h3>
-  <button type="submit" class="btn btn-primary mt-3 mb-3">Room number</button>
+<form class="border text-center col-2 mt-5 mx-auto  shadow-lg rounded" id="checkin-form">
+  <input type="hidden" name="reservation-id" value="{{reservations.id}}" />
+
+  <h3 class="display-5 mt-3">Hello Guest!</h3>
+  <h5 class="display-5 mt-5">Check In Below</h3>
+
+    <div class="form-group">
+      <label for="room-number">Room Number:</label>
+      <input class="form-input" type="text" name="room-number" value="{{reservations.rooms_id}}" />
+    </div>
+
+  <button type="submit" class="btn btn-primary mt-3 mb-3">Check In</button>
 </form>
+
+<script src="./js/checkin.js"></script>
