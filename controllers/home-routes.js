@@ -1,5 +1,5 @@
 const withAuth = require('../utils/auth');
-
+const { Reservations } = require('../models');
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
@@ -35,9 +35,19 @@ router.get('/', async (req, res) => {
 
   router.get('/checkin', withAuth, async (req, res) => {
     try {
+      const reservationData = await Reservations.findOne({
+        where: {
+          guest_id: req.session.userId
+        }
+      })
+      const reservations = reservationData.get({
+        plain: true
+      })
+
       res.render('checkin', {
         urlCheckin: req.url,
         loggedIn: req.session.loggedIn,
+        reservations
       });
     } catch (err) {
       res.status(500).json(err);
@@ -46,9 +56,19 @@ router.get('/', async (req, res) => {
 
   router.get('/checkout', withAuth, async (req, res) => {
     try {
+      const reservationData = await Reservations.findOne({
+        where: {
+          guest_id: req.session.userId
+        }
+      })
+      const reservations = reservationData.get({
+        plain: true
+      })
+
       res.render('checkout', {
         urlCheckout: req.url,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        reservations
       });
     } catch (err) {
       res.status(500).json(err);

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Reservations } = require('../../models');
 
+// Create a new reservation
 router.post('/', async (req, res) => {
 
   if (req.session.loggedIn) {
@@ -21,5 +22,27 @@ router.post('/', async (req, res) => {
     res.status(400).json({ message: 'Please log in before making a reservation'})
   }
 });
+
+// Update reservation with checkin/checkout
+router.put('/:id', async (req,res) => {
+  try {
+    const updatedRez = await Reservations.update(req.body, {
+      where: {
+        id: req.params.id,
+        rooms_id: req.body.rooms_id,
+        checked_In: req.body.checked_In
+      }
+    })
+
+    if(!updatedRez) {
+      res.status(404).json({ message: 'No reservation found'});
+      return;
+    }
+    res.status(200).json(updatedRez);
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 
 module.exports = router;
