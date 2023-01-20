@@ -12,6 +12,13 @@ router.post('/', async (req, res) => {
         checkOut_date: req.body.checkOut_date,
       });
 
+      // req.session.save(() => {
+
+      //   req.session.userId = dbGuestData.id; 
+  
+      //   res.status(200).json(dbReservationData);
+      // });
+
       res.status(200).json(dbReservationData);
     } catch (err) {
       console.log(err);
