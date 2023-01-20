@@ -55,7 +55,9 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/reviews', withAuth, async (req, res) => {
+router.get('/reviews', withAuth, async (req, res) => {
+    
+  console.log("holaaaaaa");
     try {
       res.render('reviews', {
         urlReviews: req.url,
@@ -65,6 +67,7 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
 
   router.get('/fun', withAuth, async (req, res) => {
     try {
