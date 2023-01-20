@@ -3,12 +3,12 @@ const reservationId = document.querySelector('input[name="reservation-id"]').val
 const checkinHandler = async (event) => {
     event.preventDefault();
 
-    const room_id = document.querySelector('input[name="room-number"]').value;
+    const rooms_id = document.querySelector('input[name="room-number"]').value;
 
     const response = await fetch(`/api/reservation/${reservationId}`, {
         method: 'PUT',
         body: JSON.stringify({
-            room_id,
+            rooms_id,
             checked_In: true
         }),
         headers: { 'Content-Type': 'application/json'}

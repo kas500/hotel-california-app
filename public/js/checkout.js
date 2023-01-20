@@ -1,11 +1,11 @@
-const reservationId = document.querySelector('input[name="reservation-id:]').value;
+const reservationId = document.querySelector('input[name="reservation-id"]').value;
 
 const checkoutHandler = async (event) => {
     event.preventDefault();
 
     const room_id = document.querySelector('input[name="room-number"]').value;
 
-    await fetch(`/api/reservation/${reservationId}`, {
+    const response = await fetch(`/api/reservation/${reservationId}`, {
         method: 'PUT',
         body: JSON.stringify({
             room_id,

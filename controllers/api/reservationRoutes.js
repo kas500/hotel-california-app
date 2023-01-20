@@ -29,6 +29,7 @@ router.put('/:id', async (req,res) => {
     const updatedRez = await Reservations.update(req.body, {
       where: {
         id: req.params.id,
+        rooms_id: req.params.rooms_id,
         checked_In: req.params.checked_In
       }
     })
