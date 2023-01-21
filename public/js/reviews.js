@@ -15,8 +15,7 @@ const reviewsFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            alert('Thanks for your review!');
-            document.location.replace('/');
+            document.location.replace('/reviews');
         } else {
             console.log(response);
             alert('Failed to create review.')
