@@ -3,43 +3,22 @@
         <div class="row">
             <div class="col-sm-5 col-md-6 col-12 pb-4">
                 <h3>Comments</h3>
-                {{#each reviews as |review|}}
-                <div class="comment mt-4 text-justify float-left">
-                    <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                    <h4>Carrie Young</h4>
-                    <span>- 15 January, 2023</span>
-                    <br>
-                    <p>{{review.comment}}</p>
-                </div>
+                 {{#each reviews1 as |review|}}
+                    <div class="comment mt-4 text-justify">
+                        <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+                        <h4>{{guest.username}}</h4>
+                        <span class="font-weight-light font-italic text-secondary">- {{format_time review.created_at}} {{format_date review.created_at}}</span>
+                        <br>
+                        <p>{{review.comment}}</p>
+                    </div>
                  {{/each}}
-                {{!-- <div class="text-justify darker mt-4 float-right">
-                    <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                    <h4>Edna G. Gonzalez</h4>
-                    <span>- 15 January, 2023</span>
-                    <br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                </div>
-                <div class="comment mt-4 text-justify">
-                    <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                    <h4>Spencer Rye</h4>
-                    <span>- 15 January, 2023</span>
-                    <br>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                </div>
-                <div class="darker mt-4 text-justify">
-                    <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                    <h4>Anton Krasnikov</h4>
-                    <span>- 15 January, 2023</span>
-                    <br>
-                    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-                </div>
-            </div> --}}
+            </div>
             <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
                 <form id="algin-form">
                     <div class="form-group">
                         <h4>Leave a comment</h4>
                         <label for="message">Message</label>
-                        <textarea name="msg" id="reviews"msg cols="30" rows="5" class="form-control" style="background-color: rgb(204, 236, 248);"></textarea>
+                        <textarea name="msg" id="reviews" msg cols="30" rows="5" class="form-control" style="background-color: rgb(204, 236, 248);"></textarea>
                     </div>
     
                     <div class="form-group">
