@@ -1,5 +1,5 @@
 const withAuth = require('../utils/auth');
-const { Reservations, Comments } = require('../models');
+const { Reservations, Comments, Guest } = require('../models');
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
@@ -80,15 +80,22 @@ router.get('/reviews', withAuth, async (req, res) => {
     
   const dbReviewsData = await Comments.findAll(
     {
-    attributes: ['comment']
+    attributes: ['comment', 'created_at'],
+    include: [
+      {
+        model: Guest,
+        attributes: ['username']
+      }
+    ]
     }
   )
-  const reviews = dbReviewsData.map((comment) => comment.get({ plain: true }));
+  const reviews1 = dbReviewsData.map((comment) => comment.get({ plain: true }));
     try {
       res.render('reviews', {
         urlReviews: req.url,
         loggedIn: req.session.loggedIn,
-        reviews
+        guestName: req.session.username,
+        reviews1
       });
     } catch (err) {
       res.status(500).json(err);

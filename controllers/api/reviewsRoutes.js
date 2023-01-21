@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
             res.status(500).json(err);
         }
     } else {
-        res.status(400).json({ message: 'Thanks for your review!' })
+        res.status(400).json({ message: 'Oops!' })
     }
 });
 
