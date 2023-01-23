@@ -15,7 +15,7 @@ const checkoutHandler = async (event) => {
     });
 
     if (response.ok) {
-        alert('Check-Out Successful!');
+        alert('Checkout Successful!');
         document.location.replace('/fun');
       } else {
         console.log(response);

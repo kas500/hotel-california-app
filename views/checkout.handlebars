@@ -1,8 +1,8 @@
 <form class="border text-center col-9 mt-5 mx-auto  shadow-lg rounded" style="width: 300px;" id="checkout-form">
   <input type="hidden" name="reservation-id" value="{{reservations.id}}" />
 
-  <h3 class="display-5 mt-3">You Can Checkout Anytime You Like!</h3>
-  <h5 class="display-5 mt-5">Check Out Below</h3>
+  <h3 class="display-5 mt-3">You Can Checkout Anytime You Like</h3>
+  {{!-- <h5 class="display-5 mt-5">Check Out Below</h5> --}}
 
     <div class="form-group">
       <label for="room-number">Room Number:</label>
@@ -11,7 +11,7 @@
 
   <button type="submit" class="btn btn-primary mt-3 mb-3">Check Out</button>
 
-  <h4 class="display-5 mt-3">But You Can Never Leave!</h4>
+  <h5 class="display-5 mt-3">But You Can Never Leave!</h5>
 </form>
 
 <script src="./js/checkout.js"></script>

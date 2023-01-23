@@ -1,7 +1,7 @@
 <form class="border text-center col-9 mt-5 mx-auto  shadow-lg rounded" id="checkin-form" style="width: 300px;">
   <input type="hidden" name="reservation-id" value="{{reservations.id}}" />
 
-  <h3 class="display-5 mt-3">Hello Guest!</h3>
+  <h3 class="display-5 mt-3">Hello {{reservations.guest.username}}!</h3>
   <h5 class="display-5 mt-5">Check In Below</h3>
 
     <div class="form-group">

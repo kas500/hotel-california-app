@@ -40,7 +40,13 @@ router.get('/', async (req, res) => {
       const reservationData = await Reservations.findOne({
         where: {
           guest_id: req.session.userId
-        }
+        },
+        include: [
+          {
+            model: Guest,
+            attributes: ['username'],
+          }
+        ]
       })
       const reservations = reservationData.get({
         plain: true
