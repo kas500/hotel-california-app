@@ -8,7 +8,8 @@ const reservationFormHandler = async (event) => {
   const roomNumber = document.querySelector('input[name="blankRadio"]:checked').value;
   const guestId = document.querySelector('#reservation-form').getAttribute('guest_id');
   
-
+  
+  
   if (totalGuests && checkInDate && checkOutDate && roomNumber) {
     const response = await fetch('/api/reservation', {
 
