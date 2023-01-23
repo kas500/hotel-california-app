@@ -1,5 +1,5 @@
 const withAuth = require('../utils/auth');
-const { Reservations } = require('../models');
+const { Reservations, Guest } = require('../models');
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
@@ -39,7 +39,13 @@ router.get('/', async (req, res) => {
       const reservationData = await Reservations.findOne({
         where: {
           guest_id: req.session.userId
-        }
+        },
+        include: [
+          {
+            model: Guest,
+            attributes: ['username'],
+          }
+        ]
       })
       const reservations = reservationData.get({
         plain: true
