@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
     }
   });
 
+
   router.get('/reservation', withAuth, async (req, res) => {
     try {
       res.render('reservation', {
