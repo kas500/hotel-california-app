@@ -10,7 +10,6 @@ const reservationFormHandler = async (event) => {
   
 
   if (totalGuests && checkInDate && checkOutDate && roomNumber) {
-    alert(guestId);
     const response = await fetch('/api/reservation', {
 
       method: 'POST',
