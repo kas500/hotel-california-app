@@ -1,4 +1,4 @@
-<form class="border text-center col-2 mt-5 mx-auto  shadow-lg rounded" id="checkin-form">
+<form class="border text-center col-9 mt-5 mx-auto  shadow-lg rounded" id="checkin-form" style="width: 300px;">
   <input type="hidden" name="reservation-id" value="{{reservations.id}}" />
 
   <h3 class="display-5 mt-3">Hello Guest!</h3>
@@ -6,7 +6,7 @@
 
     <div class="form-group">
       <label for="room-number">Room Number:</label>
-      <input class="form-input" type="text" name="room-number" value="{{reservations.rooms_id}}" />
+      <input class="form-control mx-auto" type="text" name="room-number" value="{{reservations.rooms_id}}" />
     </div>
 
   <button type="submit" class="btn btn-primary mt-3 mb-3">Check In</button>
