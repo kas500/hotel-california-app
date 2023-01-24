@@ -1,11 +1,13 @@
 const withAuth = require('../utils/auth');
 const { Reservations, Comments, Guest } = require('../models');
+const { registerDecorator } = require('handlebars');
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     try {
       res.render('homepage', {
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        userAdmin: req.session.userAdmin?true:false
       });
     } catch (err) {
       res.status(500).json(err);
@@ -120,4 +122,28 @@ router.get('/reviews', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get('/admin', withAuth, async (req, res) => {
+    
+    const dbReservationsData = await Reservations.findAll(
+      {
+      include: [
+        {
+          model: Guest,
+          attributes: ['username']
+        }
+      ]
+      }
+    )
+    const reservations = dbReservationsData.map((row) =>row.get({ plain: true }));
+      try {
+        res.render('admin', {
+         reservations,
+         loggedIn: req.session.loggedIn
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
+
   module.exports = router;

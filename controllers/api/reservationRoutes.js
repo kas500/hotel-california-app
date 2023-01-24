@@ -43,5 +43,20 @@ router.put('/:id', async (req,res) => {
   }
 })
 
+//delete
+router.delete('/delete', async (req, res) => {
+  try {
+      const dbReservationstDeletedData = await Reservations.destroy(
+          {
+              where: {id: req.body.id }
+          },
+        );
+      res.status(200).json(dbPostDeletedData);
+  } 
+  catch (error) {
+      res.status(500).json(error);
+  }
+});
+
 
 module.exports = router;
