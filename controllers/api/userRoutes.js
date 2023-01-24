@@ -12,6 +12,9 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
       req.session.userId = dbGuestData.id;  
+      if (req.session.username==="admin") {
+        req.session.userAdmin = true;
+      }
       
       res.status(200).json(dbGuestData);
     });
@@ -50,6 +53,9 @@ router.post('/login', async (req, res) => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
       req.session.userId = dbGuestData.id; 
+      if (req.session.username==="admin") {
+        req.session.userAdmin = true;
+      }
 
       res
         .status(200)
