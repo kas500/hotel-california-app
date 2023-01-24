@@ -4,7 +4,12 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const morgan = require('morgan');
+const fs = require('fs');
 
+let logStream = fs.createWriteStream(path.join(__dirname, 'file.log'), {
+  flags: 'a'
+});
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -25,6 +30,7 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(morgan('combined', {stream: logStream}));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

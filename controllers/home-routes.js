@@ -1,5 +1,5 @@
 const withAuth = require('../utils/auth');
-const { Reservations, Comments, Guest } = require('../models');
+const { Reservations, Comments, Guest, Rooms } = require('../models');
 const { registerDecorator } = require('handlebars');
 const router = require('express').Router();
 
@@ -27,10 +27,17 @@ router.get('/', async (req, res) => {
 
   router.get('/reservation', withAuth, async (req, res) => {
     try {
+
+      const roomsData = await Rooms.findAll({
+        attributes: ['price']
+      })
+
+      const rooms = roomsData.map((room) => room.get({ plain: true }));
       res.render('reservation', {
         urlReservation: req.url,
         loggedIn: req.session.loggedIn,
-        userId: req.session.userId
+        userId: req.session.userId,
+        rooms
       });
     } catch (err) {
       res.status(500).json(err);
