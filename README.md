@@ -8,8 +8,7 @@
  ## Description
  
  
- Our group found a common interest in traveling, and so as a result, we decided to build an application that hotels can use to create the best guest experience.  With this application, users can find <list features here> , without having to use <add info>.
-
+Our group found a common interest in traveling, and so as a result we created The Hotel California website that provides hotel guests with a quick and easy way to create reservations and an easy  check in and out of their rooms. The website also provides guest reviews as well as information about nearby activities.
 
 
 
@@ -43,9 +42,12 @@ THEN I am presented with restaurants, activities suggestions near-by
 
 ## Table of Contents
 - [Description](#description)
+- [User Story](#user-story)
 - [Installation](#installation)
-- [Credits](#credits)
+- [Usage](#usage)
+- [Features](#features)
 - [Technology Used](#technology-used)
+- [Credits](#credits)
 - [License](#license)
 
 ## Installation
@@ -57,7 +59,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 ### Step 1:
 
 ```sh
-git clone https://github.com/
+git clone https://github.com/kas500/hotel-california-app.git
 
 git status 
 ```
@@ -87,11 +89,11 @@ To create the database you must be on /db the you'll have to run the command `my
 
 ### Step 5:
 
-To seed the database go to the path /seed and run the command `node index.js`.
+To seed the database go to the path /seeds and run the command `node seed.js`.
 
 ### Step 6:
 
-Finally to run the server go to the path /Develop and then run the commant `node server.js` in the terminal.
+Finally to run the server go to the path /Develop and then run the commant `npm start` in the terminal.
 
 
 
@@ -110,15 +112,12 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 
 
+## Features
 
-
-
-
-
-
-
-
-## Credits
+- Make Reservation w/ user name and password
+- Check In/Out 
+- Comments/Reviews (create database)
+- Food/Entertainment Suggestions (static page)
 
 
 
@@ -137,13 +136,23 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 - Node MySQL 2 : https://www.npmjs.com/package/mysql2
 - Express Handlebars : https://www.npmjs.com/package/express-handlebars
 - nodemon : https://www.npmjs.com/package/nodemon
+- bootstran-icons : https://icons.getbootstrap.com/
+
+
+
+
+
+
+## Credits
+
+- Carrie Young: https://github.com/carrieky04
+- Anton Krasnikov: https://github.com/kas500
+- Spencer Rye: https://github.com/Syre11
+- Edna Gonzalez: https://github.com/enanesh
+
 
 
 ## License
 
 MIT
 
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
