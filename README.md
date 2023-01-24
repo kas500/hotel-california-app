@@ -10,6 +10,7 @@
  
 Our group found a common interest in traveling, and so as a result we created The Hotel California website that provides hotel guests with a quick and easy way to create reservations and an easy  check in and out of their rooms. The website also provides guest reviews as well as information about nearby activities.
 
+Link to deployed app: https://hotel-california-app.herokuapp.com/
 
 
 
@@ -100,13 +101,51 @@ Finally to run the server go to the path /Develop and then run the commant `npm 
 ## Usage
 
 
-Provide instructions and examples for use. Include screenshots as needed.
+### Homepage
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+The user is presented to a home page.
+
+![Screenshot 2023-01-23 at 8 26 33 PM](https://user-images.githubusercontent.com/111031708/214212372-6e40f33b-6d59-445a-b592-b3b1a8417138.png)
+
+
+### Sign In / Login page 
+
+In this view the user needs to login or sing up, to have acces to the features.
+
+![Screenshot 2023-01-23 at 8 34 31 PM](https://user-images.githubusercontent.com/111031708/214213005-583e6b0f-46b7-446e-bd88-0324632bee82.png)
+
+
+### Create a reservation
+
+The user must input a guest fumber, choose a check-in and check-out date, and in wich room do they want to stay.
+
+![Screenshot 2023-01-23 at 8 27 32 PM](https://user-images.githubusercontent.com/111031708/214212567-357d802d-cff6-4699-9364-0aba87f18fb2.png)
+
+
+### Check-in
+
+If the user is logged in they are going to be presented with their reserved room click the button. 
+
+![Screenshot 2023-01-23 at 8 28 30 PM](https://user-images.githubusercontent.com/111031708/214212624-568441fd-5975-4b04-817f-a473dfa81255.png)
+
+
+### Check-out 
+
+If the user is logged in they are going to be able to check-out. 
+
+![Screenshot 2023-01-23 at 8 29 00 PM](https://user-images.githubusercontent.com/111031708/214212696-8c2a55f3-7fe2-4c80-9219-2bf5862c0291.png)
+
+
+### Entertainment
 
 
 
+![Screenshot 2023-01-23 at 8 27 49 PM](https://user-images.githubusercontent.com/111031708/214213312-93ee5698-eb5a-47e6-af76-b2188660527f.png)
 
+
+### Reviews
+
+![Screenshot 2023-01-23 at 8 29 15 PM](https://user-images.githubusercontent.com/111031708/214213783-7cdf5ab4-3f0b-463b-9e19-f803c50bfe5d.png)
 
 
 
