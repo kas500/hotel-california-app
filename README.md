@@ -117,35 +117,43 @@ In this view the user needs to login or sing up, to have acces to the features.
 
 ### Create a reservation
 
-The user must input a guest fumber, choose a check-in and check-out date, and in wich room do they want to stay.
+The user must input a guest number, choose a check-in and check-out date, and in wich room do they want to stay.
 
 ![Screenshot 2023-01-23 at 8 27 32 PM](https://user-images.githubusercontent.com/111031708/214212567-357d802d-cff6-4699-9364-0aba87f18fb2.png)
 
 
 ### Check-in
 
-If the user is logged in they are going to be presented with their reserved room click the button. 
+If the user is logged in, is going to be presented with their reserved room. To check-in just needs to click the check-in button. 
 
 ![Screenshot 2023-01-23 at 8 28 30 PM](https://user-images.githubusercontent.com/111031708/214212624-568441fd-5975-4b04-817f-a473dfa81255.png)
 
 
 ### Check-out 
 
-If the user is logged in they are going to be able to check-out. 
+If the user is logged in, is going to be presented with their reserved room. To check-out  in just needs to click the check-out button. 
 
 ![Screenshot 2023-01-23 at 8 29 00 PM](https://user-images.githubusercontent.com/111031708/214212696-8c2a55f3-7fe2-4c80-9219-2bf5862c0291.png)
 
 
 ### Entertainment
 
-
+When the user clicks on the carrosel image, is goin to be presented with options of near by entertaiment such as coffe, restaurants, spa.
 
 ![Screenshot 2023-01-23 at 8 27 49 PM](https://user-images.githubusercontent.com/111031708/214213312-93ee5698-eb5a-47e6-af76-b2188660527f.png)
 
 
 ### Reviews
 
+Every user can leave a review of their stay.
+
 ![Screenshot 2023-01-23 at 8 29 15 PM](https://user-images.githubusercontent.com/111031708/214213783-7cdf5ab4-3f0b-463b-9e19-f803c50bfe5d.png)
+
+### Admin view
+
+In the admin view allows the hotel to delete reservations and see what rooms are checked in.  
+
+![Screenshot 2023-01-23 at 9 52 31 PM](https://user-images.githubusercontent.com/111031708/214221634-aec2c35e-7344-4103-8593-0c6f2bdec03e.png)
 
 
 
