@@ -183,8 +183,11 @@ In the admin view allows the hotel to delete reservations and see what rooms are
 - Node MySQL 2 : https://www.npmjs.com/package/mysql2
 - Express Handlebars : https://www.npmjs.com/package/express-handlebars
 - nodemon : https://www.npmjs.com/package/nodemon
-- bootstran-icons : https://icons.getbootstrap.com/
+- bootstran-icons : https://www.npmjs.com/package/bootstrap-icons
 
+Extra technology:
+
+- Morgan npm logger: https://www.npmjs.com/package/morgan 
 
 
 
